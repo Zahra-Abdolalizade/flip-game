@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@utility perspective-600 {
+  perspective: 600px;
+}
+
+@utility transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+@utility backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@utility rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+@utility neu-raised {
+  box-shadow:
+    6px 6px 12px #a0a8b8,
+    -6px -6px 12px #ffffff;
+}
+
+@utility neu-inset {
+  box-shadow:
+    inset 4px 4px 8px #a0a8b8,
+    inset -4px -4px 8px #ffffff;
+}
+
+@layer base {
+  body {
+    @apply select-none bg-[#e0e5ec];
+  }
+
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    @apply select-text;
+  }
+
+  input[type="range"] {
+    @apply select-none outline-none cursor-pointer;
+  }
+}
