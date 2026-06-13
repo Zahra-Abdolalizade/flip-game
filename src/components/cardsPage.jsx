@@ -133,7 +133,7 @@ export default function CardsPage() {
     );
   }
 
-  if (won) {
+  if (won && flipped.length === 0) {
     return <WinScreen setScreen={setScreen} playClick={playClick} />;
   }
 
