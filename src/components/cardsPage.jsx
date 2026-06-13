@@ -87,14 +87,14 @@ export default function CardsPage() {
   };
 
   const handleFlip = (card) => {
-    if (locked || gameOver || won) return;
+    if (locked || gameOver || won) return false;
     if (!gameStarted) setGameStarted(true);
     if (
       flipped.length === 2 ||
       flipped.some((c) => c.id === card.id) ||
       matched.includes(card.id)
     )
-      return;
+      return false;
 
     if (flipped.length === 0) setMovesLeft((m) => m - 1);
 
@@ -118,8 +118,9 @@ export default function CardsPage() {
         }, 800);
       }
     }
-  };
 
+    return true;
+  };
   if (screen === "setup") {
     return (
       <SetUpScreen

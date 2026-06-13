@@ -6,8 +6,8 @@ export default function Card({ card, isFlipped, handleFlip }) {
 
   const handleClick = () => {
     if (flipping) return;
-    setFlipping(true);
-    handleFlip(card);
+    const accepted = handleFlip(card);
+    if (accepted) setFlipping(true);
   };
 
   return (
